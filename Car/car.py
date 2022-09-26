@@ -1,4 +1,4 @@
-from Exeptions import CarTurnedOffError , MaxvelocityError , MinVelocityError
+from Car.Exeptions import CarTurnedOffError , MaxvelocityError , MinVelocityError
 
 class Car:
     def __init__(self):
@@ -42,8 +42,10 @@ class Car:
         self.__currentVelocity = 0
     def turnOn(self):
         self.__on = True
+    def turnOff(self):
+        self.__on = False
     def getModel(self):
         return self.__model
-    def setModel(self , model):
-        self.__model = model
+    def setDirection(self , direction):
+        self.__direction = direction
 
