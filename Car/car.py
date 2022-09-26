@@ -26,7 +26,12 @@ class Car:
         else:
             self.__currentVelocity -= 5
     def setCurrentVelocity(self , velocity):
-        self.__currentVelocity = velocity
+        if velocity > self.__MAXvelocity:
+            raise MaxvelocityError("max velocity limit")
+        elif velocity < self.__MINVELOCITY:
+            raise MinVelocityError("min velocity limit")
+        else:
+            self.__currentVelocity = velocity
     def getCurrentVelocity(self):
         return self.__currentVelocity
     def setModel(self , model):
